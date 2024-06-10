@@ -1,31 +1,78 @@
 
+.user{
+    text-align: end;
+}
+
+@media screen {
+
+    .main {  display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: column;
+        grid-template-areas:
+          "php_content php_content php_content publi"
+          "php_content php_content php_content publi"
+          "php_content php_content php_content publi"
+          "chatbot chatbot chatbot chatbot";
+      }
+      
+      .php_content { grid-area: php_content; }
+      
+      .chatbot { grid-area: chatbot; }
+      
+      .publi { grid-area: publi; }
+    
+}
+
+@media (width <= 320px) {
+
+    .main {  display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: column;
+        grid-template-areas:
+          "php_content"
+          "chatbot"
+          "publi";
+      }
+      
+      .php_content { grid-area: php_content; }
+      
+      .chatbot { grid-area: chatbot; }
+      
+      .publi { grid-area: publi; }
+
+}
 
 
-#header{
+.publi {
+    margin: 0.5em;
+}
+
+.chatbot {
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "input_text" "icono_bot";
+}
+
+.chat_icon {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding-right: 20px; /* Ajusta el espaciado derecho */
 }
 
-#logo-container {
-    position: relative;
-    text-align: center;
-
+#toggleChat {
+    margin-left: auto; /* Mueve el botón de chatbox a la derecha */
 }
 
-#menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
+#chat_presentation {
+    padding-left: 20px;
 }
 
-#temperaturas  {
-    position: relative;
-    text-align: center;
-
-}
-
-#panel_de_control {
-    position: relative;
-    text-align: center;
-}

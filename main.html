@@ -13,6 +13,7 @@
     <link href="css/responsive.css" type="text/css" rel="stylesheet" media="screen,projection">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="chatbox_textbox.js">
 </head>
 
 <body>
@@ -79,27 +80,51 @@
         </ul>
     </nav>
 
-    <div class="Main">
-        <section>
+    <div class="main">
+
+        <section class="php_content">
             <!-- User Info -->
-            <div class="user-info">
-                Usuario: <strong>PRUEBAS TALLER (Administrador)</strong>
+            <div class="user">
+                Usuario: <strong>Usuario X (Administrador)</strong>
             </div>
             <!-- Main Content  name="iframe_izq" src="fondo.php" class="content-frame" -->
             <!-- <iframe name="iframe_izq" src="#" class="">
                 AQUÍ VA LA INFORMACIÓN DE LAS SONDAS
             </iframe> -->
+
+
+            <p style="text-align: center;">
+                AQUÍ VA LA INFORMACIÓN DE LAS SONDAS DE LOS CLIENTES
+            </p>
+
         </section>
-        <aside>
+
+        <aside class="publi">
+            <p>¡CONTRATA NUESTRO NUEVO SERVICIO PREMIUM! EL CONTROL DE TUS TEMPERATURAS ESTÁ A UN MENSAJE DE DISTANCIA</p>
+            <p>LLAME AL 910 88 23 23 PARA MÁS INFORMACIÓN</p>
         </aside>
-        <footer>
-            <div class="chatbot">
-                CHATBOX
-                <img src="#" alt="chatbot_imagen">
+
+        <footer class="chatbot">
+            
+            <div id="chat" style="display: none;">
+                <div class="input_text">
+                    <input type="text" name="texto" id="texto" placeholder="Pregunte lo que necesite...">
+                    <button class="submit">Enviar pregunta</button>
+                </div>
+
             </div>
+
+            <div class="chat_icon">
+                <p id="chat_presentation">MI NOMBRE ES LUCIA Y SOY SU ASISTENTE. PÚLSEME PARA PREGUNTAR</p>
+                <button id="toggleChat"><i class="large material-icons">child_care</i></button>
+                
+            </div>
+
         </footer>
     </div>
 
+
+    <script src="chatbox_textbox.js"></script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
