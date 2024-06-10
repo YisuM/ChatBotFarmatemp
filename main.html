@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FARMATEMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="icon" sizes="192x192" href="img/logo.png">
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/inicio.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/responsive.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Pantalla Grandes-->
+    <nav class="nav-wrapper" role="navigation">
+        <a id="logo-container" href="#" class="brand-logo">
+            <img src="img/logo-farmatemp-inv.png" alt="FarmaTemp Logo" class="logo-img">
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="#">
+                    <i class="material-icons left">device_thermostat</i>Temperaturas
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons left">bar_chart</i>Panel Control
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-fic">
+                    <i class="material-icons left">settings</i>Ajustes
+                </a>
+                <ul id="dropdown-fic" class="dropdown-content">
+
+                    <li><a href="#">Añadir temperatura y resolver incidencia</a></li>
+                    <li><a href="#">Solución por variación de temperatura en refrigerador</a></li>
+                    <li><a href="#">Listado Mensual, Diario y Medidas correctoras</a></li>
+                    <li><a href="#">Informes</a></li>
+                    <li><a href="#">Instalación sonda TITÁN refrigerador</a></li>
+                    <li><a href="#">Instalación sonda TITÁN ambiental</a></li>
+                    <li><a href="#">Instalación sondas NEO</a></li>
+                    <li><a href="#">Cambio de Pila de NEO refrigerador</a></li>
+                    <li><a href="#">Cambio de Pila de NEO ambiental</a></li>
+                    <li>
+                        <a href="logout.php"><i class="material-icons left">power_settings_new</i>Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <!-- Navigation Pantalla Pequeñas-->
+
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav">
+            <li><a href="#"><i class="material-icons left">device_thermostat</i>Temperaturas</a></li>
+            <li><a href="#"><i class="material-icons left">bar_chart</i>Panel Control</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-fic-m">
+                    <i class="material-icons left">storage</i>Ficheros
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-ayu-m">
+                    <i class="material-icons left">help</i>Formación
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-informes-m">
+                    <i class="material-icons left">print</i>Informes
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+            <li><a href="#"><i class="material-icons left">power_settings_new</i>Cerrar</a></li>
+
+        </ul>
+
+
+    </nav>
+
+
+
+    <main>
+        <!-- User Info -->
+        <div class="user-info">
+            Usuario: <strong>PRUEBAS TALLER (Administrador)</strong>
+        </div>
+
+
+        <!-- Main Content  name="iframe_izq" src="fondo.php" class="content-frame" -->
+        <!-- <iframe name="iframe_izq" src="#" class="">
+            AQUÍ VA LA INFORMACIÓN DE LAS SONDAS
+
+        </iframe> -->
+
+
+
+        <div class="chatbot">
+
+            CHATBOX
+
+            <img src="#" alt="chatbot_imagen">
+
+        </div>
+
+    </main>
+
+
+
+
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                constrainWidth: false,
+                coverTrigger: false
+            });
+
+            const sidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav);
+        });
+    </script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+        var collapsibleElem = document.querySelector('.collapsible');
+        var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+</body>
+
+</html>

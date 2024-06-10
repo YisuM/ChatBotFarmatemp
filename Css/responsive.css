@@ -1,0 +1,31 @@
+
+
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    position: relative;
+    text-align: center;
+
+}
+
+#menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+#temperaturas  {
+    position: relative;
+    text-align: center;
+
+}
+
+#panel_de_control {
+    position: relative;
+    text-align: center;
+}
