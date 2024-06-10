@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FARMATEMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="icon" sizes="192x192" href="img/logo.png"> 
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="purple darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="img/logo-farmatemp-inv.png" alt="FarmaTemp Logo" class="logo-img">
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#"><i class="material-icons left">device_thermostat</i>Temperaturas</a></li>
+                <li><a href="#"><i class="material-icons left">bar_chart</i>Panel Control</a></li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown-fic">
+                        <i class="material-icons left">storage</i>Ficheros
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown-fic" class="dropdown-content">
+                        <li><a href="#"><i class="material-icons left">business</i>Empresas</a></li>
+                        <li><a href="#"><i class="material-icons left">place</i>Ubicaciones</a></li>
+                        <li><a href="#"><i class="material-icons left">people</i>Empleados</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="material-icons left">person</i>Usuarios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown-ayu">
+                        <i class="material-icons left">help</i>Formación
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown-ayu" class="dropdown-content">
+                        <li><a href="#">Instalación sonda TITÁN refrigerador</a></li>
+                        <li><a href="#">Instalación sonda TITÁN ambiental</a></li>
+                        <li><a href="#">Instalación sondas NEO</a></li>
+                        <li><a href="#">Cambio de Pila de NEO refrigerador</a></li>
+                        <li><a href="#">Cambio de Pila de NEO ambiental</a></li>
+                        <li><a href="#">Edición de Ubicaciones</a></li>
+                        <li><a href="#">Añadir temperatura y resolver incidencia</a></li>
+                        <li><a href="#">Solución por variación de temperatura en refrigerador</a></li>
+                        <li><a href="#">Listado Mensual, Diario y Medidas correctoras</a></li>
+                        <li><a href="#">Informes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown-informes">
+                        <i class="material-icons left">print</i>Informes
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown-informes" class="dropdown-content">
+                        <li><a href="#">T/H/Inc Mes</a></li>
+                        <li><a href="#">Incidencias Mes</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">T/H Periodo</a></li>
+                        <li><a href="#">T/H/Inc Periodo</a></li>
+                        <li><a href="#">Incidencias Periodo</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="material-icons left">power_settings_new</i>Cerrar</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#"><i class="material-icons left">device_thermostat</i>Temperaturas</a></li>
+                <li><a href="#"><i class="material-icons left">bar_chart</i>Panel Control</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown-fic-m">
+                    <i class="material-icons left">storage</i>Ficheros
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown-ayu-m">
+                    <i class="material-icons left">help</i>Formación
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown-informes-m">
+                    <i class="material-icons left">print</i>Informes
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a></li>
+                <li><a href="#"><i class="material-icons left">power_settings_new</i>Cerrar</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <!-- User Info -->
+    <div class="user-info">
+        Usuario: <strong>PRUEBAS TALLER (Administrador)</strong>
+    </div>
+
+    <!-- Main Content -->
+    <iframe name="iframe_izq" src="fondo.php" class="content-frame"></iframe>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                constrainWidth: false,
+                coverTrigger: false
+            });
+
+            const sidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav);
+        });
+    </script>
+</body>
+</html>
