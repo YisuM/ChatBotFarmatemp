@@ -117,7 +117,7 @@
                     background: #ccc;
                     opacity: .6;
                     pointer-events: none;
-                    
+
                 }
 
                 &.hover {
@@ -127,10 +127,26 @@
 
             }
         }
+
+        small {
+            font-size: small;
+            color: #555;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 480px;
+
+        }
     </style>
 
 
     <script type="module">
+
+        //Importamos el método de Creación del modelo directamente de la URL
+        import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm"
+
 
         const $ = el => document.querySelector(el)
 
@@ -140,6 +156,25 @@
         const $messages = $('ul')
         const $container = $('main')
         const $button = $('button')
+        const $info = $('small')
+
+
+        //const SELECTED_MODEL = "Llama-3-8B-Instruct-q4f32_1-MLC-1k"
+        const SELECTED_MODEL = "stablelm-2-zephyr-1_6b-q4f16_1-MLC"
+        const engine = await CreateMLCEngine(
+            SELECTED_MODEL,
+            {
+                initProgressCallback: (info) => {
+                    console.log('initProgressCallback', info)
+                    $info.textContent = `${info.text}%`
+                    if (info.progress === 1) {
+                        $button.removeAttribute('disabled')
+
+                    }
+                }
+            }
+        )
+
 
         $form.addEventListener('submit', (event) => {
             event.preventDefault()
@@ -187,7 +222,7 @@
 
             //actualizar el scroll para adaptarse al nuevo contenido
             //Iguala el scroll vertical (scrollTop) a la altura que tiene el scroll total de ese elemento (visible y no visible), elemento $container
-            
+
             //console.log($container.scrollHeight)
             $container.scrollTop = $container.scrollHeight
 
@@ -241,8 +276,10 @@
 
     <form action="">
         <input placeholder="Escribe tu mensaje aquí....">
-        <button type="submit">Enviar</button>
+        <button disabled type="submit">Enviar</button>
     </form>
+
+    <small>&nbsp;</small>
 
     <template id="message-template">
         <li class="message">
